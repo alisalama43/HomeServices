@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Common\ValueObject.cs" Link="Entites\Valueobjects\ValueObject.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\ActorType.cs" Link="Enum\ActorType.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\ComplaintStatus.cs" Link="Enum\ComplaintStatus.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\MatchLevel.cs" Link="Enum\MatchLevel.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\OfferStatus.cs" Link="Enum\OfferStatus.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\OrderStatus.cs" Link="Enum\OrderStatus.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\PaymentMethod.cs" Link="Enum\PaymentMethod.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\PaymentStatus.cs" Link="Enum\PaymentStatus.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\ServiceRequestStatus.cs" Link="Enum\ServiceRequestStatus.cs" />
+    <Compile Include="..\..\..\..\Downloads\HomeServicesMarketplace.Domain\Domain\Enums\VerificationStatus.cs" Link="Enum\VerificationStatus.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Enum\" />
+  </ItemGroup>
+
+</Project>

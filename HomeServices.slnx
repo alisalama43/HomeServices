@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="HomeServices.Api/HomeServices.Api.csproj" />
+    <Project Path="HomeServices.Application/HomeServices.Application.csproj" />
+    <Project Path="HomeServices.Client/HomeServices.Client.csproj" />
+    <Project Path="HomeServices.Contracts/HomeServices.Contracts.csproj" />
+    <Project Path="HomeServices.Domain/HomeServices.Domain.csproj" />
+    <Project Path="HomeServices.Infrastructure/HomeServices.Infrastructure.csproj" />
+  </Folder>
+</Solution>
