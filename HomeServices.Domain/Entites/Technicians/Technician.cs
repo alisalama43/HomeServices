@@ -4,7 +4,7 @@ using HomeServices.Domain.Entites.Complaints;
 using HomeServices.Domain.Entites.Offers;
 using HomeServices.Domain.Entites.Orders;
 using HomeServices.Domain.Entites.Professions;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +14,7 @@ namespace HomeServices.Domain.Entites.Technicians
     public class Technician:AuditableEntity
     {
         public string? Name { get; set; }
+        private readonly List<TechnicianProfession> _professions = new();
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? Bio { get; set; }
@@ -23,6 +24,7 @@ namespace HomeServices.Domain.Entites.Technicians
         public Complaint complaint { get; set; }
         public Offer offer { get; set; }
         public readonly List<Review> reviews = [];
+        public IReadOnlyCollection<TechnicianProfession> Professions => _professions.AsReadOnly();
         public IEnumerable<Review> Reviews => reviews.AsReadOnly();
         private Technician()
         {
@@ -72,6 +74,11 @@ namespace HomeServices.Domain.Entites.Technicians
                 return Error.Validation("InactiveTechnician", "The technician is inactive.");
             return this;
         }
+        public void AssignProfession(Profession profession)
+        {
+            if (profession is null) throw new ArgumentNullException(nameof(profession));
 
+            _professions.Add(new TechnicianProfession(Guid.NewGuid(), Id, profession.Id));
+        }
     }
 }

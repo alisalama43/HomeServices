@@ -1,7 +1,8 @@
 ﻿using HomeServices.Application.Common.Abstract;
 using HomeServices.Application.features.Technician.Commands.CreateTechician;
+using HomeServices.Domain.Common.Results;
 using HomeServices.Domain.Entites.Technicians;
-using MechanicShop.Domain.Common.Results;
+
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;

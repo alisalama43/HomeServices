@@ -1,5 +1,5 @@
 ﻿
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 
 namespace HomeServices.Domain.Entites.Technicians
 {

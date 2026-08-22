@@ -11,8 +11,8 @@ namespace HomeServices.Application.features.Dtos
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? Bio { get; set; }
-        public List<ReviewDto> reviews { get; set; }
+        public List<ReviewDto>? reviews { get; set; }
     }
-    public sealed record ReviewDto(Guid id, string Comment, int rating, Guid TechId, Guid CustomerId);
+    public sealed record ReviewDto(Guid id, string? Comment, int rating, Guid TechId, Guid CustomerId);
    
 }

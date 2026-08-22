@@ -1,13 +1,14 @@
 ﻿using HomeServices.Application.Common.Abstract;
-using HomeServices.Application.Common.Dtos;
+
 using HomeServices.Domain.Entites.Technicians;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using MediatR;
 using TechnicianEntity = HomeServices.Domain.Entites.Technicians.Technician;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Logging;
-using MechanicShop.Application.Features.Customers.Mappers;
+using HomeServices.Application.Features.Customers.Mappers;
+using HomeServices.Application.features.Dtos;
 
 namespace HomeServices.Application.features.Technician.Commands.CreateTechician
 {

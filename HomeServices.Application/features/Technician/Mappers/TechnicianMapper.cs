@@ -1,7 +1,7 @@
-﻿using HomeServices.Application.Common.Dtos;
+﻿using HomeServices.Application.features.Dtos;
 using HomeServices.Domain.Entites.Technicians;
 
-namespace MechanicShop.Application.Features.Customers.Mappers;
+namespace HomeServices.Application.Features.Customers.Mappers;
 
 public static class TechnicianMapper
 {

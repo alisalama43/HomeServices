@@ -1,5 +1,5 @@
 ﻿using HomeServices.Domain.Common;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +8,8 @@ namespace HomeServices.Domain.Entites.Service
 {
     public class Service : AuditableEntity
     {
-      
+        private readonly List<Guid> _requiredProfessionIds = new();
+        public IReadOnlyCollection<Guid> RequiredProfessionIds => _requiredProfessionIds.AsReadOnly();
         public string? Name { get; set; }
         public string? Description { get; set; }
         public bool IsActive { get; set; }

@@ -7,6 +7,7 @@ namespace HomeServices.Domain.Entites.Service
 {
     public class ServiceError
     {
+        public static Error NotFound => Error.NotFound("Not Found");
         public static Error RequiredName => Error.Validation("RequiredName", "The service name is required.");
         public static Error RequiredDescription => Error.Validation("RequiredDescription", "The service description is required.");
         public static Error RequiredStatus => Error.Validation("RequiredStatus", "The service status is required.");

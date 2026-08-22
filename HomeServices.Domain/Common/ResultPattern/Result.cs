@@ -3,7 +3,7 @@ using HomeServices.Domain.Common.ResultPattern.Abstraction;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
-namespace MechanicShop.Domain.Common.Results;
+namespace HomeServices.Domain.Common.Results;
 
 public static class Result
 {

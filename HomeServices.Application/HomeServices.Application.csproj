@@ -7,12 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="E:\Application\Features\Technicians###\AddProfession\AddTechnicianProfessionCommand.cs" Link="features\Technician\Commands\AddProfession\AddTechnicianProfessionCommand.cs" />
+    <Compile Include="E:\Application\Features\Technicians###\AddProfession\AddTechnicianProfessionCommandHandler.cs" Link="features\Technician\Commands\AddProfession\AddTechnicianProfessionCommandHandler.cs" />
+    <Compile Include="E:\Application\Features\Technicians###\AddProfession\AddTechnicianProfessionCommandValidator.cs" Link="features\Technician\Commands\AddProfession\AddTechnicianProfessionCommandValidator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HomeServices.Domain\HomeServices.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common\Behavior\" />
-    <Folder Include="features\Technician\Query\" />
+    <Folder Include="Common\Dtos\" />
+    <Folder Include="features\Offer\" />
+    <Folder Include="features\Technician\Commands\AddProfession\" />
   </ItemGroup>
 
   <ItemGroup>

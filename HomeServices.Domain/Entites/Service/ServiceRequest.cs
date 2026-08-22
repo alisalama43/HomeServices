@@ -2,7 +2,7 @@
 using HomeServices.Domain.Entites.Request;
 
 using HomeServices.Domain.Enum;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -52,7 +52,12 @@ namespace HomeServices.Domain.Entites.Service
         private ServiceRequest()
         { }
 
-
+        
+    public void AddImage(string imageReference, string? caption = null)
+    {
+        EnsureCanBeEdited();
+        _images.Add(new RequestImage(Guid.NewGuid(), Id, imageReference, caption));
+    }
         public Result<ServiceRequest> Cancel()
         {
             if (Status == ServiceRequestStatus.Completed)

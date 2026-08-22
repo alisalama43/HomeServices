@@ -1,22 +1,29 @@
-﻿using System;
+﻿using HomeServices.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HomeServices.Domain.Entites.Request
 {
-    public class RequestImage
+    public class RequestImage:AuditableEntity
     {
+
+        public Guid ServiceRequestId { get; private set; }
+        public string ImageReference { get; private set; } = null!;
+        public string? Caption { get; private set; }
+        public DateTime UploadedOn { get; private set; }
+
         private RequestImage() { }
-        public RequestImage(Guid id, Guid requestId, string imageUrl)
+
+        internal RequestImage(Guid id, Guid serviceRequestId, string imageReference, string? caption) : base(id)
         {
-            if (string.IsNullOrWhiteSpace(imageUrl))
-                throw new ArgumentException("Image URL is required.", nameof(imageUrl));
-            Id = id;
-            RequestId = requestId;
-            ImageUrl = imageUrl;
+            if (string.IsNullOrWhiteSpace(imageReference))
+                throw new ArgumentException("Image reference is required.", nameof(imageReference));
+
+            ServiceRequestId = serviceRequestId;
+            ImageReference = imageReference;
+            Caption = caption;
+            UploadedOn = DateTime.UtcNow;
         }
-        public Guid Id { get; set; }
-        public Guid RequestId { get; set; }
-        public string ImageUrl { get; set; }
     }
 }

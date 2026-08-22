@@ -1,7 +1,8 @@
-﻿using HomeServices.Application.Common.Dtos;
+﻿
 using MediatR;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using HomeServices.Domain.Entites.Technicians;
+using HomeServices.Application.features.Dtos;
 
 
 namespace HomeServices.Application.features.Technician.Commands.CreateTechician

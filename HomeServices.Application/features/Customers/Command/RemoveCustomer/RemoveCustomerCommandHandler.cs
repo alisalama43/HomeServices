@@ -1,14 +1,9 @@
 ﻿using HomeServices.Application.Common.Abstract;
 using HomeServices.Domain.Entites.Customer;
-using MechanicShop.Domain.Common.Results;
+using HomeServices.Domain.Common.Results;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace HomeServices.Application.features.Customers.Command.RemoveCustomer
 {
@@ -17,7 +12,7 @@ namespace HomeServices.Application.features.Customers.Command.RemoveCustomer
                                               IAppDbContext context) : IRequestHandler<RemoveCustomerCommand, Result<Deleted>>
     {
         private readonly ILogger _logger = logger;
-        private readonly IAppDbContext _appDbContext = context;
+        
         private readonly HybridCache _cache =cache;
        
         public async Task<Result<Deleted>> Handle(RemoveCustomerCommand request, CancellationToken cancellationToken)
@@ -29,9 +24,9 @@ namespace HomeServices.Application.features.Customers.Command.RemoveCustomer
                 return CustomerError.NotFound;
             }
 
-            _appDbContext.customers.Remove(ExisitingCustomer);
+            context.customers.Remove(ExisitingCustomer);
 
-            await _appDbContext.SaveChangesAsync(cancellationToken);
+            await context.SaveChangesAsync(cancellationToken);
 
             await _cache.RemoveByTagAsync("customer", cancellationToken);
 
